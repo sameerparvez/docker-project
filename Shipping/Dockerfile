@@ -4,7 +4,7 @@ COPY src /opt/server/src
 COPY pom.xml .
 RUN mvn clean package
 RUN mv opt/server/target/shipping-1.0.jar /app/shipping.jar
-ENV CART_ENDPOINT="<CART-SERVER-IPADDRESS>:8080"/
-    DB_HOST="<MYSQL-SERVER-IPADDRESS>"
+ENV CART_ENDPOINT="cart:8080"/
+    DB_HOST="mysql"
 CMD ["java", "-jar", "shipping.jar"]
      
