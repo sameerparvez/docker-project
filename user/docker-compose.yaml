@@ -2,7 +2,7 @@
   default:
     driver: bridge
     name: roboshop
-    external: true
+    external: false
 
  services:
   mongodb:
