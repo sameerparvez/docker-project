@@ -1,4 +1,4 @@
-FROM node:20-alpine3.21 AS Builder
+FROM node:20-alpine3.21 AS builder
 # Use a multi-stage build to reduce the final image size
 WORKDIR /opt/server
 COPY *.js .
@@ -12,7 +12,7 @@ USER roboshop
 ENV MONGO="true" \
     MONGO_URL="mongodb://mongodb:27017/catalogue"
 WORKDIR /opt/server
-COPY --from=Builder /opt/server/ /opt/server/
+COPY --from=builder /opt/server/ /opt/server/
 # Copy the built application files from the builder stage
 CMD ["node", "server.js"]
 
