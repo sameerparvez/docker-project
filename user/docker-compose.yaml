@@ -45,7 +45,7 @@ services:
     image: shipping:v1
     container_name: shipping
     depends_on:
-    - sql
+    - mysql
     - cart
   rabbitmq:
     image: rabbitmq:3
