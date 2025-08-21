@@ -80,5 +80,5 @@ services:
     - user
     - cart
     - shipping
-    - payment
+  
       
