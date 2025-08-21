@@ -9,7 +9,7 @@ FROM node:20-alpine3.21
 # Use a smaller base image for the final build
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 USER roboshop
-ENV REDIS_HOST="redis"/
+ENV REDIS_HOST="redis" \
     CATALOGUE_HOST="catalogue" 
 WORKDIR /opt/server
 COPY --from=builder /opt/server/ /opt/server/
