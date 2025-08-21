@@ -38,7 +38,7 @@ services:
     - redis
   mysql:
     image: sql:v1
-    container_name:sql 
+    container_name: sql 
     volumes:
     - mysql:/var/lib/mysql
   shipping:
