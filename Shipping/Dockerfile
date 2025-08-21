@@ -12,7 +12,7 @@ FROM eclipse-temurin:21-jre-alpine
 EXPOSE 8080
 WORKDIR /opt/server
 RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
-ENV CART_ENDPOINT="cart:8080"/
+ENV CART_ENDPOINT="cart:8080" \
     DB_HOST="sql"
 COPY --from=builder /opt/server/target/shipping-*.jar /opt/server/shipping.jar
 # Copy the built application files from the builder stage
